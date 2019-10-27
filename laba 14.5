@@ -1,0 +1,59 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+
+	int n, num = 0;
+
+	do {
+
+		cout << "Введите количество элементов массива N (N > 0) : ";
+		cin >> n;
+		cout << endl;
+
+		if (n > 0) {
+
+			int* array = new int[n];
+
+			for (int i = 0; i != n; i++) {
+
+				cout << "Введите " << i + 1 << " элемент массива : ";
+				cin >> array[i];
+
+			}
+
+			for (int i = 0; i != (n - 1); i++) {
+				
+				for (int j = i + 1; j != n; j++) {
+
+					if (array[i] == array[j]) {
+
+						cout << "Номера одинаковых элементов : " << i + 1 << " и " << j + 1 << ". " << endl;
+
+					}
+
+				}
+
+			}
+
+			break;
+
+		}
+		else {
+
+			cout << "Ошибка ввода количества элементов массива!\nПовторите попытку!.." << endl;
+
+		}
+
+	} while (true);
+
+	cout << endl;
+
+	system("pause");
+
+	return 0;
+
+}
